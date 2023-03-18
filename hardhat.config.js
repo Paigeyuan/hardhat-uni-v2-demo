@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("hardhat-laika");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {

@@ -5,7 +5,7 @@ const hre = require("hardhat");
 // node_modules/@uniswap/lib/contracts/libraries/FullMath.sol
 
 async function main() {
-  const [deployer, ...rest] = await hre.ethers.getSigners();
+  const [deployer, ...rest] = await hre.ethers.getSigners(); //เครื่องเราคือ 1 โหนด
 
   // Define Tokens
   const ERC20 = await hre.ethers.getContractFactory("ERC20");
@@ -15,7 +15,7 @@ async function main() {
 
   // Deploy Factory
   const UniswapV2Factory = await hre.ethers.getContractFactory("UniswapV2Factory");
-  const factory = await UniswapV2Factory.deploy(deployer.address);
+  const factory = await UniswapV2Factory.deploy(deployer.address); //you address
 
   // Deploy Router
   const UniswapV2Router02 = await hre.ethers.getContractFactory("UniswapV2Router02");

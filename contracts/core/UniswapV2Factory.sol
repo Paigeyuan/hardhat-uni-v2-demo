@@ -4,20 +4,20 @@ import './interfaces/IUniswapV2Factory.sol';
 import './UniswapV2Pair.sol';
 
 contract UniswapV2Factory is IUniswapV2Factory {
-    address public feeTo;
-    address public feeToSetter;
+    address public feeTo;// เก็บค่าฟีไปที่เป๋าไหน 
+    address public feeToSetter; //จะส่งค่าฟีไปให้ใคร
 
     mapping(address => mapping(address => address)) public getPair;
-    address[] public allPairs;
+    address[] public allPairs; //collect  address all pairs
 
-    event PairCreated(address indexed token0, address indexed token1, address pair, uint);
+    event PairCreated(address indexed token0, address indexed token1, address pair, uint); //log
 
     constructor(address _feeToSetter) public {
         feeToSetter = _feeToSetter;
-    }
+    } //method
 
     function allPairsLength() external view returns (uint) {
-        return allPairs.length;
+        return allPairs.length; //call how many pairs 
     }
 
     function createPair(address tokenA, address tokenB) external returns (address pair) {
